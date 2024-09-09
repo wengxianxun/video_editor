@@ -185,7 +185,7 @@ class _CropGridViewerState extends State<CropGridViewer> with CropPreviewMixin {
         }
       }
       setState(() {}); // to update selected boundary color
-      _controller.isCropping = true;
+      // _controller.isCropping = true;
     }
   }
 

@@ -59,18 +59,30 @@ mixin CropPreviewMixin<T extends StatefulWidget> on State<T> {
     return SizedBox.fromSize(
       size: layout,
       child: CropTransformWithAnimation(
-        shouldAnimate: layout != Size.zero,
-        transform: transform,
-        child: VideoViewer(
-          controller: controller,
-          child: buildPaint(
-            controller,
-            boundary: boundary,
-            showGrid: showGrid,
-            showCenterRects: controller.preferredCropAspectRatio == null,
+          shouldAnimate: layout != Size.zero,
+          transform: transform,
+          child: Container(
+            width: 200,
+            height: 200,
+            color: Colors.redAccent,
+            child: buildPaint(
+              controller,
+              boundary: boundary,
+              showGrid: showGrid,
+              showCenterRects: controller.preferredCropAspectRatio == null,
+            ),
+          )
+
+          // VideoViewer(
+          //   controller: controller,
+          //   child: buildPaint(
+          //     controller,
+          //     boundary: boundary,
+          //     showGrid: showGrid,
+          //     showCenterRects: controller.preferredCropAspectRatio == null,
+          //   ),
+          // ),
           ),
-        ),
-      ),
     );
   }
 

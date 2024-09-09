@@ -1,8 +1,8 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:get_thumbnail_video/index.dart';
-import 'package:get_thumbnail_video/video_thumbnail.dart';
+// import 'package:get_thumbnail_video/index.dart';
+// import 'package:get_thumbnail_video/video_thumbnail.dart';
 import 'package:video_editor_2/domain/bloc/controller.dart';
 import 'package:video_editor_2/domain/entities/cover_data.dart';
 
@@ -17,14 +17,14 @@ Stream<List<Uint8List>> generateTrimThumbnails(
 
   for (int i = 1; i <= quantity; i++) {
     try {
-      final bytes = await VideoThumbnail.thumbnailData(
-        imageFormat: ImageFormat.JPEG,
-        video: path,
-        timeMs: (eachPart * i).toInt(),
-        quality: quality,
-      );
+      // final bytes = await VideoThumbnail.thumbnailData(
+      //   imageFormat: ImageFormat.JPEG,
+      //   video: path,
+      //   timeMs: (eachPart * i).toInt(),
+      //   quality: quality,
+      // );
 
-      byteList.add(bytes);
+      // byteList.add(bytes);
     } catch (e) {
       debugPrint(e.toString());
     }
@@ -74,12 +74,12 @@ Future<CoverData> generateSingleCoverThumbnail(
   int timeMs = 0,
   int quality = 10,
 }) async {
-  final thumbData = await VideoThumbnail.thumbnailData(
-    imageFormat: ImageFormat.JPEG,
-    video: filePath,
-    timeMs: timeMs,
-    quality: quality,
-  );
+  // final thumbData = await VideoThumbnail.thumbnailData(
+  //   imageFormat: ImageFormat.JPEG,
+  //   video: filePath,
+  //   timeMs: timeMs,
+  //   quality: quality,
+  // );
 
-  return CoverData(thumbData: thumbData, timeMs: timeMs);
+  return CoverData(thumbData: null, timeMs: timeMs);
 }
